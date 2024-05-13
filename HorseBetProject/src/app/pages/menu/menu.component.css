@@ -55,7 +55,6 @@ img {
 p {
     color: var(--gray-color);
     font-size: .875em;
-    hyphens: auto;
     line-height: 1.5;
     margin: 1em 0;
 }
@@ -69,7 +68,6 @@ p {
     display: flex;
 }
 
-/* HEADER NAV */
 .logo-link {
     color: var(--dark-color);
     font-weight: 600;
