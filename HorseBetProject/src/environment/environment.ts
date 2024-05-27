@@ -3,6 +3,7 @@ export const environment = {
     firebase:{
         apiKey: "AIzaSyAC2iYO101iT8lV1t9nqzHs_nx3HuJL_0s",
         authDomain: "horsebet-7c496.firebaseapp.com",
+        databaseURL: "https://horsebet-7c496-default-rtdb.firebaseio.com",
         projectId: "horsebet-7c496",
         storageBucket: "horsebet-7c496.appspot.com",
         messagingSenderId: "199676585729",

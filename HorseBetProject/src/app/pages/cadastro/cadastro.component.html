@@ -9,12 +9,12 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 		<div class="signup">
-			<form>
+			<form [formGroup]="formGroup">
 				<label for="chk" aria-hidden="true">Cadastrar</label>
-				<input type="text" name="txt" placeholder="Nome" required="">
-				<input type="email" name="email" placeholder="Email" required="">
-				<input type="password" name="pswd" placeholder="Senha" required="">
-				<button type="button">Cadastrar</button>
+				<input type="text" name="txt" placeholder="Nome" required="" formControlName="nome">
+				<input type="email" name="email" placeholder="Email" required="" formControlName="email">
+				<input type="password" name="pswd" placeholder="Senha" required="" formControlName="senha">
+				<button type="button" (click)="salvar()">Cadastrar</button>
 			</form>
 		</div>
 
