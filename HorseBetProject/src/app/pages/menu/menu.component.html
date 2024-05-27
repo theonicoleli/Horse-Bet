@@ -2,16 +2,21 @@
     <nav class="header-nav container flex-container">
         <h1 class="logo"><a class="logo-link" href="#">Horse Bet</a></h1>
         <ul class="header-menu flex-container">
-            <li><a class="header-menu-link" href="">Apostas</a></li>
+            <li><a class="header-menu-link" routerLink="/lista">Apostas</a></li>
             <li><a class="header-menu-link" href="">Corridas</a></li>
             <li><a class="header-menu-link" href="">Histórico</a></li>
         </ul>
-        <button routerLink="/cadastro" class="ghost-button">Cadastrar</button>
+        <div *ngIf="user; else notLoggedIn">
+            <span>Logado como: {{ user.displayName || user.email }}</span>
+            <button (click)="logout()" style="margin-left:20px">Logout</button>
+        </div>
+        <ng-template #notLoggedIn>
+            <button routerLink="/cadastro" class="ghost-button">Cadastrar/Logar</button>
+        </ng-template>
     </nav>
     <section class="header-content">
         <figure class="header-img">
-            <img src="../../../assets/images/horse-bet.png"
-                alt="HorseBet">
+            <img src="../../../assets/images/horse-bet.png" alt="HorseBet">
         </figure>
         <div class="header-description container">
             <h2 class="header-title">Apostas e Diversões</h2>

@@ -16,15 +16,21 @@
 				<input type="password" name="pswd" placeholder="Senha" required="" formControlName="senha">
 				<button type="button" (click)="salvar()">Cadastrar</button>
 			</form>
+			<div *ngIf="showErrorMessages" class="error-message">
+				{{ errorMessage }}
+			</div>
 		</div>
 
 		<div class="login">
-			<form>
+			<form [formGroup]="formGroupLogin">
 				<label for="chk" aria-hidden="true">Login</label>
-				<input type="email" name="email" placeholder="Email" required="">
-				<input type="password" name="pswd" placeholder="Senha" required="">
-				<button type="button">Login</button>
+				<input type="email" name="email" placeholder="Email" required="" formControlName="emaillogin">
+				<input type="password" name="pswd" placeholder="Senha" required="" formControlName="senhalogin">
+				<button type="button" (click)="realizarLogin()">Login</button>
 			</form>
+			<div *ngIf="showErrorMessages" class="error-message">
+				{{ errorMessage }}
+			</div>
 		</div>
 	</div>
 </body>
