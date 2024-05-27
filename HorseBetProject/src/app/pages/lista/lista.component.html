@@ -14,8 +14,7 @@
     </ng-template>
 </nav>
 
-<div *ngIf="user">
-
+<div *ngIf="user; else nada ">
     <div class="cadastroaposta">
         <h2>Cadastrar Nova Aposta</h2>
         <br>
@@ -37,7 +36,13 @@
     <div class="listaapostas" style="margin-top: 30px;"*ngIf="apostas$ | async as apostas">
         <h2>Lista de apostas disponíveis:</h2>
         <div *ngFor="let aposta of apostas">
+            
             <p>{{ aposta.nome }} - Número de cavalos: {{ aposta.numeroCavalos }}</p>
+            <button>Participar</button>
+            <hr>
         </div>
     </div>
 </div>
+<ng-template #nada>
+    <h2 class="naologado">Você não está logado!</h2>
+</ng-template>
