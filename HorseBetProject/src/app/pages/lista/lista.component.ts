@@ -13,6 +13,7 @@ import { AuthService } from '../../auth.service';
 export class ListaComponent implements OnInit {
   apostas$!: Observable<Aposta[]>;
   form: FormGroup;
+  numberOfApostas!: number;
   user: any;
 
   constructor(private apostaService: ApostaService, private fb: FormBuilder, private authService: AuthService) {
@@ -31,6 +32,7 @@ export class ListaComponent implements OnInit {
 
   carregarApostas(): void {
     this.apostas$ = this.apostaService.getApostas();
+    this.getIndexOfApostas();
   }
 
   cadastrarAposta(): void {
@@ -43,9 +45,10 @@ export class ListaComponent implements OnInit {
     }
   }
 
-  logout(): void {
-    this.authService.logout().then(() => {
-      this.user = null;
+  getIndexOfApostas() {
+    this.apostas$.subscribe(apostas => {
+      this.numberOfApostas = apostas.length;
     });
   }
+
 }

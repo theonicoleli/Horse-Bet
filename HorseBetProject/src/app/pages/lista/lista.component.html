@@ -1,46 +1,26 @@
-<nav class="header-nav container flex-container">
-    <h1 class="logo"><a class="logo-link" href="#">Horse Bet</a></h1>
-    <ul class="header-menu flex-container">
-        <li><a class="header-menu-link" routerLink="/lista">Apostas</a></li>
-        <li><a class="header-menu-link" href="">Corridas</a></li>
-        <li><a class="header-menu-link" href="">Histórico</a></li>
-    </ul>
-    <div *ngIf="user; else notLoggedIn">
-        <span>Logado como: {{ user.displayName || user.email }}</span>
-        <button (click)="logout()" style="margin-left:20px">Logout</button>
-    </div>
-    <ng-template #notLoggedIn>
-        <button routerLink="/cadastro" class="ghost-button">Cadastrar/Logar</button>
-    </ng-template>
-</nav>
+<app-navbar></app-navbar>
 
 <div *ngIf="user; else nada ">
     <div class="cadastroaposta">
-        <h2>Cadastrar Nova Aposta</h2>
-        <br>
-        <form [formGroup]="form" (submit)="cadastrarAposta()">
-            <div>
-                <label for="nome">Nome da Aposta:</label>
-                <input type="text" id="nome" formControlName="nome">
-                
+        <h2 class="title">Cadastrar Nova Aposta</h2>
+        <form class="form-aposta" [formGroup]="form" (submit)="cadastrarAposta()">
+            <div class="info-inputs">
+                <label for="nome">Nome da Aposta</label>
+                <input class="input-square" type="text" id="nome" formControlName="nome">
             </div>
             <br>
-            <div>
-                <label for="numeroCavalos">Número de Cavalos:</label>
-                <input type="number" id="numeroCavalos" formControlName="numeroCavalos">
+            <div class="info-inputs">
+                <label for="numeroCavalos">Número de Cavalos</label>
+                <input class="input-square" type="number" id="numeroCavalos" formControlName="numeroCavalos">
             </div>
             <br>
             <button type="submit" [disabled]="form.invalid">Cadastrar Aposta</button>
         </form>
     </div>
-    <div class="listaapostas" style="margin-top: 30px;"*ngIf="apostas$ | async as apostas">
-        <h2>Lista de apostas disponíveis:</h2>
-        <div *ngFor="let aposta of apostas">
-            
-            <p>{{ aposta.nome }} - Número de cavalos: {{ aposta.numeroCavalos }}</p>
-            <button>Participar</button>
-            <hr>
-        </div>
+    <hr>
+    <div class="final-box">
+        <h2 class="final-box-title">Apostas disponíveis: {{ numberOfApostas }}</h2>
+        <button routerLink="/aposta">Ver Apostas</button>
     </div>
 </div>
 <ng-template #nada>

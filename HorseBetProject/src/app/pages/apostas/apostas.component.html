@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div class="lista-apostas" *ngIf="apostas$ | async as apostas">
+    <h2 class="title">Lista de apostas disponíveis:</h2>
+    <div *ngFor="let aposta of apostas">
+        <p>{{ aposta.nome }} - Número de cavalos: {{ aposta.numeroCavalos }}</p>
+        <button [routerLink]="['/bet', aposta.nome]">Participar</button>
+    </div>
+</div>

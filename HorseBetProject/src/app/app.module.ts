@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { BetComponent } from './pages/bet/bet.component';
+import { ApostasComponent } from './pages/apostas/apostas.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
@@ -25,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     CadastroComponent,
     ListaComponent,
+    ApostasComponent,
+    BetComponent
   ],
   imports: [
     BrowserModule,
