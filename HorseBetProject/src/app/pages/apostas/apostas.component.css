@@ -209,7 +209,8 @@ p {
 }
 
 .lista-apostas {
-    display: flex;
+    display: grid;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     flex-direction: column;

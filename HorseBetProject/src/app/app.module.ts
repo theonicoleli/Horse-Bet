@@ -28,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroComponent,
     ListaComponent,
     ApostasComponent,
-    BetComponent
+    BetComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,10 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

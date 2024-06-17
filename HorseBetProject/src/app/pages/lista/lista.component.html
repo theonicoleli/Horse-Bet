@@ -2,10 +2,10 @@
 
 <div *ngIf="user; else nada ">
     <div class="cadastroaposta">
-        <h2 class="title">Cadastrar Nova Aposta</h2>
+        <h2 class="title">Cadastrar Nova Corrida</h2>
         <form class="form-aposta" [formGroup]="form" (submit)="cadastrarAposta()">
             <div class="info-inputs">
-                <label for="nome">Nome da Aposta</label>
+                <label for="nome">Nome da Corrida</label>
                 <input class="input-square" type="text" id="nome" formControlName="nome">
             </div>
             <br>
@@ -13,14 +13,20 @@
                 <label for="numeroCavalos">Número de Cavalos</label>
                 <input class="input-square" type="number" id="numeroCavalos" formControlName="numeroCavalos">
             </div>
+            <div class="info-inputs">
+                <label for="localCorrida">Local da Corrida</label>
+                <input class="input-square" type="text" id="EstadoCorrida" formControlName="estadoCorrida" placeholder="Estado"><br>
+                <input class="input-square" type="text" id="cidadeCorrida" formControlName="cidadeCorrida" placeholder="Cidade"><br>
+                <input class="input-square" type="text" id="localCorrida" formControlName="localCorrida" placeholder="Local (Ex: Estádio Maracanã)">
+            </div>
             <br>
-            <button type="submit" [disabled]="form.invalid">Cadastrar Aposta</button>
+            <button type="submit" [disabled]="form.invalid">Cadastrar Corrida</button>
         </form>
     </div>
     <hr>
     <div class="final-box">
-        <h2 class="final-box-title">Apostas disponíveis: {{ numberOfApostas }}</h2>
-        <button routerLink="/aposta">Ver Apostas</button>
+        <h2 class="final-box-title">Corridas disponíveis: {{ numberOfApostas }}</h2>
+        <button routerLink="/aposta">Ver Corridas</button>
     </div>
 </div>
 <ng-template #nada>

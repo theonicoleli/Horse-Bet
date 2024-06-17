@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BetComponent {
   betName: string | null = null;
-
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
