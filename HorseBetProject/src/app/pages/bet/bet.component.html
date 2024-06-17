@@ -1,4 +1,16 @@
 <app-navbar></app-navbar>
+
 <div class="lista-apostas" *ngIf="betName">
-    <h1>{{betName}}</h1>
+    <h1>{{ betName }}</h1>
+    <div *ngIf="apostas$ | async as apostas">
+        <div *ngFor="let aposta of apostas">
+            <ng-container *ngIf="aposta.nome === betName">
+                <p>Informações sobre a Corrida:</p>
+                <p>Número de cavalos: {{ aposta.numeroCavalos }}</p>
+                <p>Local da Corrida:</p>
+                <p>{{aposta.estadoCorrida}} - {{aposta.cidadeCorrida}} - {{aposta.localCorrida}}</p>
+            </ng-container>
+        </div>
+        <button>Apostar</button>
+    </div>
 </div>

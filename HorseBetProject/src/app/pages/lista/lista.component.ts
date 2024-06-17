@@ -18,7 +18,10 @@ export class ListaComponent implements OnInit {
   constructor(private apostaService: ApostaService, private fb: FormBuilder, private authService: AuthService) {
     this.form = this.fb.group({
       nome: ['', Validators.required],
-      numeroCavalos: [0, [Validators.required, Validators.min(1)]]
+      numeroCavalos: [0, [Validators.required, Validators.min(1)]],
+      estadoCorrida: ['', Validators.required],
+      cidadeCorrida: ['', Validators.required],
+      localCorrida: ['', Validators.required]
     });
   }
 
