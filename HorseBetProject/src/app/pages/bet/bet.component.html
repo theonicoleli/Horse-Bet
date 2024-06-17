@@ -21,8 +21,8 @@
         <div class="info-inputs" *ngIf="apostas$ | async as apostas">
             <label for="cavalo">Cavalo</label>
             <div *ngFor="let aposta of apostas">
-                <select class="input-square" name="horse" id="horse" *ngIf="aposta.nome === betName">
-                    <option *ngFor="let cavalo of aposta.cavalos"></option>
+                <select class="select-square" name="horse" id="horse" *ngIf="aposta.nome === betName">
+                  <option *ngFor="let cavalo of carregarCavalos(aposta)" [value]="cavalo">{{ cavalo }}</option>
                 </select>
             </div>
         </div>

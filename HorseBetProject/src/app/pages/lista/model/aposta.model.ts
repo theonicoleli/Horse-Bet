@@ -6,6 +6,7 @@ export interface Aposta {
     estadoCorrida: string;
     cidadeCorrida: string;
     localCorrida: string;
+    participante: any;
     cavalos: Cavalo[];
-  }
+}
   

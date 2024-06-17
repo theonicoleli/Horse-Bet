@@ -14,8 +14,11 @@ import { map, filter, catchError } from 'rxjs/operators';
 export class BetComponent {
   betName: string | null = null;
   apostas$!: Observable<Aposta[]>;
+  randomNumbers: any[];
 
-  constructor(private route: ActivatedRoute, private apostaService: ApostaService) { }
+  constructor(private route: ActivatedRoute, private apostaService: ApostaService) {
+    this.randomNumbers = []
+   }
 
   ngOnInit(): void {
     this.carregarApostas();
@@ -25,7 +28,18 @@ export class BetComponent {
   }
   carregarApostas(): void {
     this.apostas$ = this.apostaService.getApostas();
-    this.apostas$.forEach(aposta => console.log(aposta));
+    this.randomNumbers = [];
   }
-}
 
+  carregarCavalos(aposta: Aposta) {
+    let randomHorse: any = [];
+    while (randomHorse.length < aposta.numeroCavalos) {
+      const randomNumber = Math.floor(Math.random() * aposta.numeroCavalos) + 1;
+      if (!randomHorse.includes(randomNumber)) {
+        randomHorse.push(randomNumber);
+      }
+    }
+    return randomHorse;
+  }
+  
+}

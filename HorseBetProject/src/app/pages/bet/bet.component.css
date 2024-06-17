@@ -278,3 +278,14 @@ span {
 .text-aposta {
     padding-bottom: 40px;
 }
+
+.select-square {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    padding: 20px;
+}
+
+.select-square:hover {
+    border: 1px solid black;
+}
