@@ -59,8 +59,6 @@ realizarLogin()  {
   var login = new CadastroModel();
     login.email = this.formGroupLogin.controls.emaillogin.value?.toString() ?? '';
     login.senha = this.formGroupLogin.controls.senhalogin.value?.toString() ?? '';
-  console.log('Login: ' + this.formGroupLogin.controls.emaillogin.value?.toString());
-  console.log('Senha:  ' + this.formGroupLogin.controls.senhalogin.value?.toString());
 
   if (!login.email || !login.senha) {
     this.showErrorMessages = true;
@@ -69,8 +67,7 @@ realizarLogin()  {
   }
   this.afAuth
       .signInWithEmailAndPassword(login.email, login.senha)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         alert("Usuário logado com sucesso!")
         this.router.navigate(['/menu']);
       })

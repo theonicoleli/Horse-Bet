@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { HistoricoComponent } from './pages/historico/historico.component';
 import { BetComponent } from './pages/bet/bet.component';
 import { ApostasComponent } from './pages/apostas/apostas.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroComponent,
     ListaComponent,
     ApostasComponent,
-    BetComponent
+    BetComponent,
+    HistoricoComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,10 +41,10 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

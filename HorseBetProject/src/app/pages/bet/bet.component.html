@@ -1,4 +1,31 @@
 <app-navbar></app-navbar>
+
 <div class="lista-apostas" *ngIf="betName">
-    <h1>{{betName}}</h1>
+    <h1 class="title">{{ betName }}</h1>
+    <div class="aposta-cavalo" *ngIf="apostas$ | async as apostas">
+        <div *ngFor="let aposta of apostas">
+            <ng-container *ngIf="aposta.nome === betName">
+                <p class="informations-title">Informações sobre a Corrida</p>
+                <p>Número de cavalos: <span>{{ aposta.numeroCavalos }}</span></p>
+                <p>Local da Corrida:</p>
+                <p><span>{{aposta.estadoCorrida}} - {{aposta.cidadeCorrida}} - {{aposta.localCorrida}}</span></p>
+            </ng-container>
+        </div>
+    </div>
+    <form class="form-aposta">
+        <span class="text-aposta">Sua aposta</span>
+        <div class="info-inputs">
+            <label for="valor">Valor</label>
+            <input class="input-square" type="number" name="value" id="value">
+        </div>
+        <div class="info-inputs" *ngIf="apostas$ | async as apostas">
+            <label for="cavalo">Cavalo</label>
+            <div *ngFor="let aposta of apostas">
+                <select class="input-square" name="horse" id="horse" *ngIf="aposta.nome === betName">
+                    <option *ngFor="let cavalo of aposta.cavalos"></option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">Apostar</button>
+    </form>
 </div>

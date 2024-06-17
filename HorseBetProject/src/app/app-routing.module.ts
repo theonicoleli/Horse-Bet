@@ -5,6 +5,7 @@ import { ListaComponent } from './pages/lista/lista.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ApostasComponent } from './pages/apostas/apostas.component';
 import { BetComponent } from './pages/bet/bet.component';
+import { HistoricoComponent } from './pages/historico/historico.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'lista', component: ListaComponent },
   { path: 'aposta', component: ApostasComponent },
-  { path: 'bet/:name', component: BetComponent}
+  { path: 'bet/:name', component: BetComponent},
+  { path: 'historico', component: HistoricoComponent}
 ];
 
 @NgModule({

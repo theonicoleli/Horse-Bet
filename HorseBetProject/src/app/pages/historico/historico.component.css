@@ -226,7 +226,6 @@ p {
     padding: 45px;
     border: 1px solid black;
     border-radius: 20px;
-    margin: 45px;
 }
 
 .informations-title {
@@ -245,36 +244,11 @@ span {
     text-transform: uppercase;
 }
 
-.info-inputs{
+.apostas-anteriores {
     display: flex;
-    padding-bottom: 20px;
-    flex-direction: column;
-}
-.info-inputs label {
-    padding-bottom: 20px;
-    font-size: 18px;
-}
-.input-square{
-    width: 300px;
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid gainsboro;
-    padding: 20px;
-}
-.input-square:hover {
-    border: 1px solid black;
-}
-.form-aposta {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 45px;
-    width: auto;
-    border: 1px solid black;
-    border-radius: 20px;
+    justify-content: row;
 }
 
-.text-aposta {
-    padding-bottom: 40px;
+.apostas-anteriores div {
+    margin: 20px;
 }
