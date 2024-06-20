@@ -12,20 +12,18 @@
             </ng-container>
         </div>
     </div>
-    <form class="form-aposta">
+    <form class="form-aposta" [formGroup]="formBet" (submit)="cadastrarBet()">
         <span class="text-aposta">Sua aposta</span>
         <div class="info-inputs">
             <label for="valor">Valor</label>
-            <input class="input-square" type="number" name="value" id="value">
+            <input class="input-square" type="number" name="value" id="value" formControlName="valorAposta">
         </div>
         <div class="info-inputs" *ngIf="apostas$ | async as apostas">
             <label for="cavalo">Cavalo</label>
-            <div *ngFor="let aposta of apostas">
-                <select class="select-square" name="horse" id="horse" *ngIf="aposta.nome === betName">
-                  <option *ngFor="let cavalo of carregarCavalos(aposta)" [value]="cavalo">{{ cavalo }}</option>
-                </select>
-            </div>
+            <select class="select-square" name="horse" id="horse" formControlName="nomeCavalo">
+                <option *ngFor="let cavalo of randomNumbers" [ngValue]="cavalo">{{ cavalo }}</option>
+            </select>
         </div>
-        <button type="submit">Apostar</button>
+        <button type="submit" [disabled]="formBet.invalid">Apostar</button>
     </form>
 </div>

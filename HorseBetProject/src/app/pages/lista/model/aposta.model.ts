@@ -7,6 +7,7 @@ export interface Aposta {
     cidadeCorrida: string;
     localCorrida: string;
     participante: any;
-    cavalos: Cavalo[];
+    nomeCavalo?: string;
+    valorAposta?: any;
 }
   

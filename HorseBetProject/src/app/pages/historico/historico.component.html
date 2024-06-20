@@ -1,18 +1,20 @@
 <app-navbar></app-navbar>
-<div class="lista-apostas" *ngIf="apostas$ | async as apostas">
+
+<div class="lista-apostas" *ngIf="betUserRaces">
     <h2 class="title">Minhas participações em apostas:</h2>
-    <div class="apostas-anteriores" *ngFor="let aposta of apostas">
-        <div class="aposta-cavalo" *ngIf="user.email === aposta.participante; else nada">
-            <!-- Fazer com que essa query a baixo funcione -->
+    
+    <div class="apostas-anteriores">
+        <div class="aposta-cavalo" *ngFor="let aposta of betUserRaces">
             <!-- <ng-container *ngIf="aposta.usuariosParticipantes.email === user.email"> -->
             <ng-container>
                 <p class="informations-title">Informações sobre a Corrida</p>
+                <p>Nome da corrida: <span>{{ aposta.nome }}</span></p>
                 <p>Número de cavalos: <span>{{ aposta.numeroCavalos }}</span></p>
                 <p>Local da Corrida:</p>
-                <p><span>{{aposta.estadoCorrida}} - {{aposta.cidadeCorrida}} - {{aposta.localCorrida}}</span></p>
+                <p><span>{{ aposta.estadoCorrida }} - {{ aposta.cidadeCorrida }} - {{ aposta.localCorrida }}</span></p>
+                <p>Número do cavalo da aposta: <span>{{ aposta.nomeCavalo }}</span></p>
+                <p>Valor da aposta: <span>{{ aposta.valorAposta }}</span></p>
             </ng-container>
         </div>
-        <ng-template #nada>
-        </ng-template>
     </div>
 </div>
