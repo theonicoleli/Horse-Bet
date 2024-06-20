@@ -252,3 +252,29 @@ p {
 .final-box-title {
     padding-bottom: 15px;
 }
+
+@media screen and (max-width: 500px) {
+    .final-box {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cadastroaposta {
+        text-align: center;
+        padding: 0;
+    }
+    button {
+        background: transparent;
+        border: none;
+        border-radius: 2em;
+        cursor: pointer;
+        font-size: .875em;
+        font-weight: 600;
+        height: 2em;
+        letter-spacing: -.025em;
+        text-transform: uppercase;
+        transition: .25s;
+        padding-bottom: 60px;
+    }
+}

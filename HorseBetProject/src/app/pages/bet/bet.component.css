@@ -289,3 +289,27 @@ span {
 .select-square:hover {
     border: 1px solid black;
 }
+
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 28px;
+        padding-bottom: 30px;
+    }
+    .lista-apostas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .form-aposta {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 35px;
+        width: auto;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+}
