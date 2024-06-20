@@ -207,3 +207,11 @@ p {
         margin-top: 15vh;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .logInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -5,7 +5,7 @@
         <li><a class="header-menu-link" [routerLink]="user ? '/lista' : '/cadastro'">Corridas</a></li>
         <li><a class="header-menu-link" [routerLink]="user ? '/historico' : '/cadastro'">Histórico</a></li>
     </ul>
-    <div *ngIf="user; else notLoggedIn">
+    <div class="logInfo" *ngIf="user; else notLoggedIn">
         <span>Logado como: {{ user.displayName || user.email }}</span>
         <button (click)="logout()" style="margin-left: 20px">Logout</button>
     </div>
