@@ -52,31 +52,28 @@ export class CadastroComponent {
           console.log('Usuário criado com sucesso:', userCredential.user);
         })
 
-
-
-}
-realizarLogin()  {
-  var login = new CadastroModel();
-    login.email = this.formGroupLogin.controls.emaillogin.value?.toString() ?? '';
-    login.senha = this.formGroupLogin.controls.senhalogin.value?.toString() ?? '';
-
-  if (!login.email || !login.senha) {
-    this.showErrorMessages = true;
-    this.errorMessage = 'Email e senha são obrigatórios.';
-    return;
   }
-  this.afAuth
-      .signInWithEmailAndPassword(login.email, login.senha)
-      .then(() => {
-        alert("Usuário logado com sucesso!")
-        this.router.navigate(['/menu']);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-      
-      
-}
+
+  realizarLogin()  {
+    var login = new CadastroModel();
+      login.email = this.formGroupLogin.controls.emaillogin.value?.toString() ?? '';
+      login.senha = this.formGroupLogin.controls.senhalogin.value?.toString() ?? '';
+
+    if (!login.email || !login.senha) {
+      this.showErrorMessages = true;
+      this.errorMessage = 'Email e senha são obrigatórios.';
+      return;
+    }
+    this.afAuth
+        .signInWithEmailAndPassword(login.email, login.senha)
+        .then(() => {
+          alert("Usuário logado com sucesso!")
+          this.router.navigate(['/menu']);
+        })
+        .catch(() => {
+          alert("Sua senha ou email não estão corretos.")
+        });
+  }
 }
 
 
